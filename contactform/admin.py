@@ -1,7 +1,7 @@
 from django.contrib import admin
 from contactform.models import ContactModel
 
-# Register your models here.
+# Contact form model.
 class ContactAdmin(admin.ModelAdmin):
     list_display = ['name', 'sender', 'message']
 

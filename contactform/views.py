@@ -4,15 +4,15 @@ from django.core.mail import send_mail
 from django.contrib import messages
 from decouple import config
 
-# Create your views here.
+# Home page view
 def home_view(request):
     return render(request, 'contactform/index.html', {})
 
+# Contact page view
 def contact_view(request):
     if request.method == "POST":
         form = CreateContactForm(request.POST)
         if form.is_valid():
-                   
             name = request.POST['name']
             sender = request.POST['sender']
             message = request.POST['message']
@@ -25,7 +25,8 @@ def contact_view(request):
                 [config('receiver_email')],
             )
             form.save()
-            messages.success(request, 'Thank you for contacting us, we will get back to you shortly...')
+            messages.success(
+                request, 'Thank you for contacting us, we will get back to you shortly...')
             return redirect('contact')
     else:
         return render(request, 'contactform/contact.html', {})

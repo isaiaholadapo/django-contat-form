@@ -8,7 +8,8 @@ from decouple import config
 from contactform.models import ContactModel
 from contactform.api.serializers import ContactSerailizer
 
-@api_view(['POST',])
+# api contact form view
+@api_view(['POST', ])
 def api_create_contact_view(request):
     if request.method == "POST":
         serializer = ContactSerailizer(data=request.data)
