@@ -15,7 +15,8 @@
     <div class="container py-lg-5 py-md-4">
         <div class="title text-center">
             <h3 class="title-big">Get in touch with us</h3>
-            <p class="mt-2 mx-lg-5">You will find yourself working in a true partnership that results in an incredible experience,
+            <p class="mt-2 mx-lg-5">You will find yourself working in a true partnership that results in an incredible
+                experience,
                 and an end product that is the best.</p>
         </div>
         <div class="row">
@@ -48,11 +49,11 @@
             </div>
         </div>
         {% if messages %}
-            {% for message in messages %}
-            <div class="alert alert-success mt-5" role="alert">
-                {{ message }}
-            </div>
-            {% endfor %}
+        {% for message in messages %}
+        <div class="alert alert-success mt-5" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
         {% endif %}
         <div class="row mt-5">
             <div class="col-lg-6 map">
@@ -62,19 +63,19 @@
             </div>
             <div class="col-lg-6 form-inner-cont mt-lg-0 mt-sm-5 mt-4">
                 <form action="{% url 'contact' %}" method="post" class="signin-form">
-                  {% csrf_token %}
-                  <div class="form-input">
-                    <input type="text" name="name" id="name" placeholder="Your name" required="">
-                  </div>
-                  <div class="form-input">
-                    <input type="email" name="sender" id="sender" placeholder="Your email address" required="">
-                  </div>
-                  <div class="form-input">
-                    <textarea name="message" id="message" placeholder="Your message" required=""></textarea>
-                  </div>
-                  <div class="text-right">
-                    <button type="submit" class="btn btn-style btn-primary">Submit</button>
-                  </div>
+                    {% csrf_token %}
+                    <div class="form-input">
+                        <input type="text" name="name" id="name" placeholder="Your name" required="">
+                    </div>
+                    <div class="form-input">
+                        <input type="email" name="sender" id="sender" placeholder="Your email address" required="">
+                    </div>
+                    <div class="form-input">
+                        <textarea name="message" id="message" placeholder="Your message" required=""></textarea>
+                    </div>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-style btn-primary">Submit</button>
+                    </div>
                 </form>
             </div>
         </div>
