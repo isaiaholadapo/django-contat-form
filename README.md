@@ -25,7 +25,7 @@ EMAIL_HOST_PASSWORD= Gmail password
 receiver_email= Email receiver address
 ```
 
-Change the following variables from views.py & api/views.py
+Change the following variables from contactform/views.py & contactform/api/views.py
 
 ```python
 
