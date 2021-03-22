@@ -23,7 +23,7 @@ def api_create_contact_view(request):
                 'Contact Form mail from ' + name,
                 'Sender email: ' + ' ' + sender + '\n' + message,
                 sender,
-                [config('receiver_email')],
+                ['examplw@example.com'],
             )
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
