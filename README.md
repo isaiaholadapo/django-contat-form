@@ -24,6 +24,13 @@ EMAIL_HOST_USER= Gmail username
 EMAIL_HOST_PASSWORD= Gmail password
 receiver_email= Email receiver address
 ```
+
+Change the following variables from views.py & api/views.py
+
+```python
+
+receiver_email= Email receiver address e.g. ['example@example.com']
+```
 ## API Usage
 POST request URL: http://127.0.0.1:8000/api/contacts
 
