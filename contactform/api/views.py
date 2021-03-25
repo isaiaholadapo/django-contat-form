@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.core.mail import send_mail
 from decouple import config
+from django.utils.datastructures import MultiValueDictKeyError
 
 
 from contactform.models import ContactModel
@@ -14,10 +15,14 @@ def api_create_contact_view(request):
     if request.method == "POST":
         serializer = ContactSerailizer(data=request.data)
         if serializer.is_valid():
-            name = request.POST['name']
-            sender = request.POST['sender']
-            message = request.POST['message']
-
+            try:
+                name = request.POST['name']
+                sender = request.POST['sender']
+                message = request.POST['message']
+            except MultiValueDictKeyError:
+                name = False
+                sender = False
+                message = False
             # send mail
             send_mail(
                 'Contact Form mail from ' + name,
